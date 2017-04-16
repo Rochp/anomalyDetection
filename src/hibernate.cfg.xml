@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    <!-- 配置数据库的基本信息 -->
+    <property name="connection.username">root</property>
+    <property name="connection.password">root</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/anomalyDetection</property>
+    
+    <!-- 配置hibernate的基本信息 -->
+    
+    <!-- hibernate所使用的方言 -->
+	<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+	
+	<!-- 是否在控制台打印sql语句 -->
+	<property name="show_sql">true</property>
+	
+	<!-- 是否进行sql格式化 -->
+	<property name="format_sql">true</property>
+	
+	<!-- 指定自动生成数据表的策略 -->
+	<property name="hbm2ddl.auto">update</property>
+	
+	<!-- 指定关联的。hbm 。xml文件 -->
+	<mapping resource="com/ldu/anmalyDetection/testHibernate.hbm.xml"/>
+	
+    </session-factory>
+</hibernate-configuration>
